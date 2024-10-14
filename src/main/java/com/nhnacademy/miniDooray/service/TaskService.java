@@ -18,7 +18,7 @@ public class TaskService {
 
     public List<TaskDto> getTasks(Long projectId, String userId) {
         try {
-            String url = "http://localhost:8082/projects/" + projectId + "/tasks";
+            String url = "http://localhost:8080/projects/" + projectId + "/tasks";
             HttpHeaders headers = new HttpHeaders();
             headers.set("X-USER-ID", userId);
 
@@ -38,7 +38,7 @@ public class TaskService {
 
     public TaskDto createTask(Long projectId, String userId, String title, String content, Long milestoneId, List<Long> tagIds) {
         try {
-            String url = "http://localhost:8082/projects/" + projectId + "/tasks";
+            String url = "http://localhost:8080/projects/" + projectId + "/tasks";
             HttpHeaders headers = new HttpHeaders();
             headers.set("X-USER-ID", userId);
 
@@ -57,7 +57,7 @@ public class TaskService {
 
             TaskDto taskDto = response.getBody();
 
-            String url2 = "http://localhost:8082/projects/" + projectId + "/tasks/" + taskDto.getId();
+            String url2 = "http://localhost:8080/projects/" + projectId + "/tasks/" + taskDto.getId();
 
             TaskTagRequest taskTagRequest = new TaskTagRequest();
             taskTagRequest.setTagIds(tagIds);
@@ -78,7 +78,7 @@ public class TaskService {
 
     public TaskDto getTask(Long projectId, Long taskId, String userId) {
         try {
-            String url = "http://localhost:8082/projects/" + projectId + "/tasks/" + taskId;
+            String url = "http://localhost:8080/projects/" + projectId + "/tasks/" + taskId;
             HttpHeaders headers = new HttpHeaders();
             headers.set("X-USER-ID", userId);
 
@@ -98,7 +98,7 @@ public class TaskService {
 
     public List<TaskTagDto> getTagByTaskId(Long projectId, Long taskId, String userId) {
         try {
-            String url = "http://localhost:8082/projects/" + projectId + "/tasks/" + taskId + "/tag";
+            String url = "http://localhost:8080/projects/" + projectId + "/tasks/" + taskId + "/tag";
             HttpHeaders headers = new HttpHeaders();
             headers.set("X-USER-ID", userId);
 

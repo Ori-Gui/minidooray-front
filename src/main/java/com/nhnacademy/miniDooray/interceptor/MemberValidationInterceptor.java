@@ -27,7 +27,7 @@ public class MemberValidationInterceptor implements HandlerInterceptor {
             return false;
         }
 
-        String url = "http://localhost:8081/members/" + userId;
+        String url = "http://localhost:8080/members/" + userId;
         ResponseEntity<MemberDto> apiResponse = restApiClient.sendGetRequest(url, MemberDto.class);
 
         if (!apiResponse.getStatusCode().is2xxSuccessful()) {

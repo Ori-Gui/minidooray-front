@@ -19,7 +19,7 @@ public class CommentService {
 
     public List<CommentDto> getCommentByTaskId(Long projectId, Long taskId, String userId) {
         try {
-            String url = "http://localhost:8082/projects/" + projectId + "/tasks/" + taskId + "/comments";
+            String url = "http://localhost:8080/projects/" + projectId + "/tasks/" + taskId + "/comments";
             HttpHeaders headers = new HttpHeaders();
             headers.set("X-USER-ID", userId);
 
@@ -39,7 +39,7 @@ public class CommentService {
 
     public CommentDto createComment(Long projectId, Long taskId, String userId, CommentRegisterDto commentRegisterDto) {
         try {
-            String url = "http://localhost:8082/projects/" + projectId + "/tasks/" + taskId + "/comments";
+            String url = "http://localhost:8080/projects/" + projectId + "/tasks/" + taskId + "/comments";
             HttpHeaders headers = new HttpHeaders();
             headers.set("X-USER-ID", userId);
 
